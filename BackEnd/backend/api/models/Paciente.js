@@ -8,22 +8,30 @@
 module.exports = {
 
   attributes: {
-
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-
-
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    nombres: {
+      type: 'string',
+      required: true
+    },
+    apellidos: {
+      type: 'string',
+      required: true
+    },
+    fechaNacimiento: {
+      type: 'string',
+      required: true
+    },
+    hijos: {
+      type: 'number',
+      required: true
+    },
+    tieneSeguro: {
+      type: 'boolean',
+      required: true
+    },
+    medicamentos: {
+      collection: 'Medicamento',
+      via: 'pacienteIdFK'
+    }
   },
-
 };
 
