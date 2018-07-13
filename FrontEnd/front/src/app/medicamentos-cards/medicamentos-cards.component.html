@@ -2,23 +2,24 @@
   <div class="col-sm-1"></div>
   <div class="col-sm-10">
     <div class="row">
-      <div *ngFor="let medicamento of medicamentos" class="col-sm-2">
+      <div *ngFor="let medicamento of medicamentos" class="col-sm-3">
         <mat-card class="medicamento">
-          <mat-card-header>
-            <div mat-card-avatar class="medicamento-header-image"></div>
-            <mat-card-title>Nombre</mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
           <mat-card-content>
-            <p>
-              The Shiba Inu
-            </p>
+            <div class="row">
+              <div class="col-sm-6">
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <br>
+                <button mat-stroked-button (click)="irModeloMedicamento()">Seleccionar</button>
+              </div>
+              <div class="col-sm-6">
+                <label>{{medicamento.nombre}}</label>
+                <br>
+                <label>{{medicamento.composicion}}</label>
+              </div>
+            </div>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
+        <br>
       </div>
     </div>
     <br>
@@ -26,3 +27,4 @@
   </div>
   <div class="col-sm-1"></div>
 </div>
+<br>
