@@ -9,7 +9,7 @@
               <div class="col-sm-6">
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                 <br>
-                <button mat-stroked-button (click)="irModeloMedicamento()">Seleccionar</button>
+                <button mat-stroked-button (click)="irModeloMedicamento(medicamento.pacienteIdFK.id, medicamento.id)">Seleccionar</button>
               </div>
               <div class="col-sm-6">
                 <label>{{medicamento.nombre}}</label>

@@ -5,8 +5,24 @@ import {ModeloMedicamentoComponent} from "./modelo-medicamento/modelo-medicament
 import {CarritoComponent} from "./carrito/carrito.component";
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'modeloPaciente', component: ModeloPacienteComponent },
-  { path: 'modeloMedicamento', component: ModeloMedicamentoComponent },
-  { path: 'carrito', component: CarritoComponent }
+  {
+    path: 'home',
+    component: HomeComponent },
+  {
+    path: 'modeloPaciente/:idPaciente',
+    component: ModeloPacienteComponent
+    /*children:
+      [{
+
+        path: 'modeloMedicamento/:idMedicamento',
+        component: ModeloMedicamentoComponent
+
+      }]*/
+  },
+  {
+    path: 'modeloPaciente/:idPaciente/modeloMedicamento/:idMedicamento',
+    component: ModeloMedicamentoComponent },
+  {
+    path: 'carrito',
+    component: CarritoComponent }
 ];

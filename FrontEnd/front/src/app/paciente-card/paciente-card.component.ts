@@ -12,7 +12,6 @@ import {Router} from "@angular/router";
 export class PacienteCardComponent implements OnInit {
 
   pacientes = [];
-  Aux = [];
 
   constructor(private pacienteService: PacienteService, private _router: Router) {
   }
@@ -24,8 +23,8 @@ export class PacienteCardComponent implements OnInit {
     );
   }
 
-  irAModeloPaciente() {
-    const url = ['/modeloPaciente'];
+  irAModeloPaciente(idPaciente: string) {
+    const url = ['/modeloPaciente', idPaciente];
     this._router.navigate(url);
   }
 }

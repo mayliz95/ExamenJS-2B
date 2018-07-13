@@ -23,8 +23,8 @@ export class MedicamentosCardsComponent implements OnInit {
     );
   }
 
-  irModeloMedicamento() {
-    const url = ['/modeloMedicamento'];
+  irModeloMedicamento(idPaciente, idMedicamento) {
+    const url = ['modeloPaciente', idPaciente, 'modeloMedicamento', idMedicamento];
     this._router.navigate(url);
   }
 }
