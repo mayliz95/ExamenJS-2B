@@ -16,7 +16,9 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit() {
     this.medicamentoArreglo = CarritoService.arreglo_Carrito;
-
   }
 
+  calcularTotalGramos () {
+
+  }
 }
