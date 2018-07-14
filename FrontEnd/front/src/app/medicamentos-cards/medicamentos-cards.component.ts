@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MedicamentoService} from "../Servicios/medicamento.service";
 import {Router} from "@angular/router";
+import {isNumber} from "util";
 
 @Component({
   selector: 'app-medicamentos-cards',
@@ -10,21 +11,25 @@ import {Router} from "@angular/router";
 })
 export class MedicamentosCardsComponent implements OnInit {
 
-  medicamentos = [];
+  @Input() medicamentosLista;
 
   constructor(private medicamentosService: MedicamentoService, private _router: Router){
   }
 
   ngOnInit() {
-    this.medicamentosService.getMedicamentos().subscribe(
-      (result: any[]) => {
-        this.medicamentos = result;
-      }
-    );
   }
 
   irModeloMedicamento(idPaciente, idMedicamento) {
-    const url = ['modeloPaciente', idPaciente, 'modeloMedicamento', idMedicamento];
+
+    if (!isNumber(idPaciente)) {
+      console.log('if');
+      idPaciente = idPaciente.id;
+    } else {
+      idPaciente = idPaciente
+    }
+
+    const url = ['/modeloPaciente', idPaciente, 'modeloMedicamento', idMedicamento];
+    console.log(url);
     this._router.navigate(url);
   }
 }

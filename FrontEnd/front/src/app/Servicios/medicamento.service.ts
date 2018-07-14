@@ -20,4 +20,14 @@ export class MedicamentoService {
     let header = MedicamentoService.getCommonHeaders();
     return this.http.get("http://localhost:1337/medicamento",{headers: header});
   }
+
+  getMedicamentosPorPaciente(idPaciente) {
+    let header = MedicamentoService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/paciente/" + idPaciente + "/medicamentos" ,{headers: header});
+  }
+
+  getMedicamentoPorId(idMedicamento) {
+    let header = MedicamentoService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/medicamento/" + idMedicamento ,{headers: header});
+  }
 }

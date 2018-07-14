@@ -19,4 +19,9 @@ export class PacienteService {
     let header = PacienteService.getCommonHeaders();
     return this.http.get("http://localhost:1337/paciente",{headers: header});
   }
+
+  getPacientePorId(idPaciente) {
+    let header = PacienteService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/paciente/" + idPaciente ,{headers: header});
+  }
 }

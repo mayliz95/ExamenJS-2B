@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PacienteService} from "../Servicios/paciente.service";
 import {Paciente} from "../Clases/Paciente";
 import {Router} from "@angular/router";
@@ -27,4 +27,5 @@ export class PacienteCardComponent implements OnInit {
     const url = ['/modeloPaciente', idPaciente];
     this._router.navigate(url);
   }
+
 }
