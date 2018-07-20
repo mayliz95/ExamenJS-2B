@@ -12,6 +12,7 @@ import {PacienteService} from "../Servicios/paciente.service";
 export class HomeComponent implements OnInit {
 
   medicamentos = [];
+  pacientes = [];
   datoABuscar;
 
   constructor(private medicamentosService: MedicamentoService,
@@ -19,6 +20,11 @@ export class HomeComponent implements OnInit {
   ){
   }
   ngOnInit() {
+    this.pacienteService.getPacientes().subscribe(
+      (result: any []) => {
+        this.pacientes = result;
+      }
+    );
     this.medicamentosService.getMedicamentos().subscribe(
       (result: any[]) => {
         this.medicamentos = result;
@@ -31,11 +37,10 @@ export class HomeComponent implements OnInit {
         this.medicamentos = result;
       }
     );
-    /*this.pacienteService.buscarPaciente(this.datoABuscar).subscribe(
+    this.pacienteService.buscarPaciente(this.datoABuscar).subscribe(
       (result: any[]) => {
-        this.medicamentos = result;
-        console.log(this.medicamentos)
+        this.pacientes = result;
       }
-    );*/
+    );
   }
 }

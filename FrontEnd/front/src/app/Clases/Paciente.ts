@@ -5,12 +5,12 @@ export class Paciente {
   public Id: number;
   public createdAt: string;
   public updatedAt: string;
-  public Nombres: string;
-  public Apellidos: string;
-  public Fecha_Nacimiento: string;
-  public Hijos: number;
-  public Tiene_Seguro: boolean;
-  public Medicamentos: Medicamento [];
+  public nombres: string;
+  public apellidos: string;
+  public fechaNacimiento: string;
+  public hijos: number;
+  public tieneSeguro: boolean;
+  public medicamentos: Medicamento [];
 
   constructor(
   ) {}

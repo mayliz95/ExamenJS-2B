@@ -1,7 +1,15 @@
 <mat-toolbar color="primary" style="height: 50px">
+  <span>
+    <button mat-icon-button (click)="irAHome()">
+      <mat-icon style="">home</mat-icon>
+    </button>
+  </span>
   <span style="flex: 4 1 auto"></span>
-  <span style=" padding-right: 10px; padding-top: 13px">
-    <mat-icon>shopping_cart</mat-icon>
+  <span style=" padding-right: 14px;">
+    <button mat-icon-button (click)="irACarrito()">
+      <mat-icon matBadge='{{numeroItems}}' matBadgeColor="warn" size="small">shopping_cart</mat-icon>
+    </button>
+    <!--mat-icon matBadge='3' matBadgeColor="warn" size="small">shopping_cart</mat-icon-->
   </span>
   <span style=" padding-right: 10px; width: content-box">
     <img src="{{imgUsuario}}" alt="Usuario">

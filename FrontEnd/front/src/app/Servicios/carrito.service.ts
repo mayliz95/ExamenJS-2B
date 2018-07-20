@@ -6,7 +6,7 @@ import {Medicamento} from "../Clases/Medicamento";
 export class CarritoService {
 
   static arregloCarrito = [];
-  static arreglo_Carrito:Array<String>=[];
+  static arreglo_Carrito:Array<Medicamento>=[];
 
   constructor(private http: HttpClient) {
   }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PacienteService} from "../Servicios/paciente.service";
 import {Paciente} from "../Clases/Paciente";
 import {Router} from "@angular/router";
@@ -11,16 +11,12 @@ import {Router} from "@angular/router";
 })
 export class PacienteCardComponent implements OnInit {
 
-  pacientes = [];
+  @Input() pacientes = [];
+  limiteMostrar = 6;
 
   constructor(private pacienteService: PacienteService, private _router: Router) {
   }
   ngOnInit() {
-    this.pacienteService.getPacientes().subscribe(
-      (result: any []) => {
-        this.pacientes = result;
-      }
-    );
   }
 
   irAModeloPaciente(idPaciente: string) {
@@ -28,4 +24,10 @@ export class PacienteCardComponent implements OnInit {
     this._router.navigate(url);
   }
 
+  cargarMas() {
+    this.limiteMostrar += 6 ;
+    if (this.limiteMostrar > this.pacientes.length) {
+      this.limiteMostrar = this.pacientes.length;
+    }
+  }
 }

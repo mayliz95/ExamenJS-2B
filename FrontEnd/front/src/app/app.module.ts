@@ -19,6 +19,9 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FormsModule} from "@angular/forms";
+import {MatBadgeModule} from '@angular/material/badge';
+import { DialogoComponent } from './dialogo/dialogo.component';
+import {MatDialog, MatDialogModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import {FormsModule} from "@angular/forms";
     ModeloPacienteComponent,
     ModeloMedicamentoComponent,
     CarritoComponent,
-    BarraSuperiorComponent
+    BarraSuperiorComponent,
+    DialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +47,14 @@ import {FormsModule} from "@angular/forms";
     MatInputModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    MatBadgeModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogoComponent
+  ]
 })
 export class AppModule { }
