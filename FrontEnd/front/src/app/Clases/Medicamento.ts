@@ -1,3 +1,5 @@
+import {Paciente} from "./Paciente";
+
 export class Medicamento {
 
   public id: number;
@@ -9,7 +11,10 @@ export class Medicamento {
   public usadoPara: string;
   public fechaCaducidad: string;
   public numeroPastillas: number;
-  public pacienteId: number;
+  public urlImg: string;
+  public estado: string;
+  public pacienteIdFK: Paciente;
+
 
   constructor(){}
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarraBusquedaComponent } from './barra-busqueda.component';
+import { BarraSuperiorComponent } from './barra-superior.component';
 
-describe('BarraBusquedaComponent', () => {
-  let component: BarraBusquedaComponent;
-  let fixture: ComponentFixture<BarraBusquedaComponent>;
+describe('BarraSuperiorComponent', () => {
+  let component: BarraSuperiorComponent;
+  let fixture: ComponentFixture<BarraSuperiorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BarraBusquedaComponent ]
+      declarations: [ BarraSuperiorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BarraBusquedaComponent);
+    fixture = TestBed.createComponent(BarraSuperiorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

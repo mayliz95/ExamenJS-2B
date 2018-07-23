@@ -1,35 +1,37 @@
+<app-barra-superior></app-barra-superior>
 <div class="row">
   <div class="col-sm-1"></div>
   <div class="col-sm-10">
-    <h2>Paciente: {{medicamentoSeleccionado.pacienteIdFK.nombres}} {{medicamentoSeleccionado.pacienteIdFK.apellidos}}</h2>
+    <h2>Paciente: {{medicamentoSeleccionado?.pacienteIdFK.nombres}} {{medicamentoSeleccionado?.pacienteIdFK.apellidos}}</h2>
     <br>
     <mat-card>
       <div class="row">
         <div class="col-sm-3" >
-          <img src="https://media.metrolatam.com/2017/08/09/fechacaducidadmedicamentos-1200x600.jpg" alt="medicamentos" style="width: 100%; max-width: 350px">
+          <img src="{{medicamentoSeleccionado?.urlImg}}" alt="medicamentos" style="width: 100%; max-width: 350px">
         </div>
         <div class="col-sm-9">
-          <h3>Medicamento: {{medicamentoSeleccionado.nombre}}</h3>
+          <h3>Medicamento: {{medicamentoSeleccionado?.nombre}}</h3>
           <br>
           <div class="row">
             <div class="col-sm-4">
-              <label>Gramos a Ingerir: {{medicamentoSeleccionado.gramosAIngerir}}</label>
+              <label>Gramos a Ingerir: {{medicamentoSeleccionado?.gramosAIngerir}}</label>
               <br>
-              <label>Numero de Pastillas: {{medicamentoSeleccionado.numeroPastillas}}</label>
+              <label>Numero de Pastillas: {{medicamentoSeleccionado?.numeroPastillas}}</label>
             </div>
             <div class="col-sm-4">
-              <label>Fecha Caducidad: {{medicamentoSeleccionado.fechaCaducidad}}</label>
-              <label>Usado Para: {{medicamentoSeleccionado.usadoPara}}</label>
+              <label>Fecha Caducidad: {{medicamentoSeleccionado?.fechaCaducidad}}</label>
+              <label>Usado Para: {{medicamentoSeleccionado?.usadoPara}}</label>
             </div>
             <div class="col-sm-4">
-              <label>Composición: {{medicamentoSeleccionado.composicion}}</label>
+              <label>Composición: {{medicamentoSeleccionado?.composicion}}</label>
+              <label [class]="medicamentoSeleccionado?.estado.replace(' ','')">Estado: {{medicamentoSeleccionado?.estado}}</label>
             </div>
           </div>
         </div>
       </div>
     </mat-card>
     <br>
-    <button mat-raised-button color="primary" style="text-align: center" (click)="irACarrito()">Añadir al carrito</button>
+    <button mat-raised-button color="primary" style="text-align: center" (click)="irACarrito()" [disabled]="medicamentoSeleccionado?.estado === 'No Disponible'">Añadir al carrito</button>
   </div>
   <div class="col-sm-1"></div>
 </div>

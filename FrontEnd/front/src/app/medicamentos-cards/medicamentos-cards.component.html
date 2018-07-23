@@ -2,12 +2,12 @@
   <div class="col-sm-1"></div>
   <div class="col-sm-10">
     <div class="row">
-      <div *ngFor="let medicamento of medicamentosLista" class="col-sm-3">
+      <div *ngFor="let medicamento of medicamentosLista.slice(0,limiteMostrar)" class="col-sm-3">
         <mat-card class="medicamento">
           <mat-card-content>
             <div class="row">
               <div class="col-sm-6">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image src="{{medicamento.urlImg}}" alt="Medicamento">
                 <br>
                 <button mat-stroked-button (click)="irModeloMedicamento(medicamento.pacienteIdFK, medicamento.id)">Seleccionar</button>
               </div>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <br>
-    <button mat-raised-button color="primary" style="text-align: center">Cargar más</button>
+    <button mat-raised-button color="primary" style="width: 100%;" (click)="cargarMas()">Cargar más</button>
   </div>
   <div class="col-sm-1"></div>
 </div>

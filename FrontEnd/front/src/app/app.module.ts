@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { PacienteCardComponent } from './paciente-card/paciente-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from "@angular/common/http";
-import { BarraBusquedaComponent } from './barra-busqueda/barra-busqueda.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -17,17 +16,24 @@ import {routes} from "./app.routes";
 import { ModeloPacienteComponent } from './modelo-paciente/modelo-paciente.component';
 import { ModeloMedicamentoComponent } from './modelo-medicamento/modelo-medicamento.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {FormsModule} from "@angular/forms";
+import {MatBadgeModule} from '@angular/material/badge';
+import { DialogoComponent } from './dialogo/dialogo.component';
+import {MatDialog, MatDialogModule} from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
     PacienteCardComponent,
-    BarraBusquedaComponent,
     MedicamentosCardsComponent,
     HomeComponent,
     ModeloPacienteComponent,
     ModeloMedicamentoComponent,
-    CarritoComponent
+    CarritoComponent,
+    BarraSuperiorComponent,
+    DialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +45,16 @@ import { CarritoComponent } from './carrito/carrito.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    FormsModule,
+    MatBadgeModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogoComponent
+  ]
 })
 export class AppModule { }

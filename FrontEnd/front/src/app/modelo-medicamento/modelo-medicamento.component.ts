@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MedicamentoService} from "../Servicios/medicamento.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CarritoService} from "../Servicios/carrito.service";
+import {Medicamento} from "../Clases/Medicamento";
 
 @Component({
   selector: 'app-modelo-medicamento',
@@ -11,7 +12,7 @@ import {CarritoService} from "../Servicios/carrito.service";
 })
 export class ModeloMedicamentoComponent implements OnInit {
 
-  medicamentoSeleccionado;
+  medicamentoSeleccionado: Medicamento;
 
   constructor(private _medicamentoService: MedicamentoService,
               private _activatedRoute: ActivatedRoute,
@@ -23,10 +24,8 @@ export class ModeloMedicamentoComponent implements OnInit {
     });
 
   }
-
   ngOnInit() {
   }
-
   getMedicamento(idMedicamento) {
     this._medicamentoService.getMedicamentoPorId(idMedicamento).subscribe(
       (result: any) => {
@@ -34,7 +33,6 @@ export class ModeloMedicamentoComponent implements OnInit {
       }
     );
   }
-
   irACarrito() {
     CarritoService.arreglo_Carrito.push(this.medicamentoSeleccionado);
     const url = ['/carrito'];
