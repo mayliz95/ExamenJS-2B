@@ -24,13 +24,14 @@
             </div>
             <div class="col-sm-4">
               <label>Composición: {{medicamentoSeleccionado?.composicion}}</label>
+              <label [class]="medicamentoSeleccionado?.estado.replace(' ','')">Estado: {{medicamentoSeleccionado?.estado}}</label>
             </div>
           </div>
         </div>
       </div>
     </mat-card>
     <br>
-    <button mat-raised-button color="primary" style="text-align: center" (click)="irACarrito()">Añadir al carrito</button>
+    <button mat-raised-button color="primary" style="text-align: center" (click)="irACarrito()" [disabled]="medicamentoSeleccionado?.estado === 'No Disponible'">Añadir al carrito</button>
   </div>
   <div class="col-sm-1"></div>
 </div>
