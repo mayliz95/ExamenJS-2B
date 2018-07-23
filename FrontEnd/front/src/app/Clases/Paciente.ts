@@ -10,6 +10,7 @@ export class Paciente {
   public fechaNacimiento: string;
   public hijos: number;
   public tieneSeguro: boolean;
+  public urlImg: string;
   public medicamentos: Medicamento [];
 
   constructor(

@@ -32,6 +32,14 @@ module.exports = {
       type: 'number',
       required: true
     },
+    urlImg: {
+      type: 'string',
+      required: true
+    },
+    estado: {
+      type: 'string',
+      required: true
+    },
     pacienteIdFK: {
       model: 'Paciente'
     }

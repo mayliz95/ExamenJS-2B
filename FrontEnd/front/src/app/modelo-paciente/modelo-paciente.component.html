@@ -10,7 +10,7 @@
   </div>
   <div class="col-sm-1"></div>
   <div class="col-sm-4">
-    <img src="https://dnb2eg0emsxdz.cloudfront.net/cdn/13/images/curso-online-movilizacion-paciente_l_primaria_1.jpg" alt="Paciente" style="width: 100%; max-width: 400px">
+    <img src="{{pacienteSeleccionado?.urlImg}}" alt="Paciente" style="width: 100%; max-width: 400px">
   </div>
   <div class="col-sm-1"></div>
 </div>
@@ -33,7 +33,7 @@
           <mat-card-content>
             <div class="row">
               <div class="col-sm-6">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image src="{{medicamento.urlImg}}" alt="Photo of a Shiba Inu">
                 <br>
                 <button mat-stroked-button (click)="irModeloMedicamento(medicamento.pacienteIdFK, medicamento.id)">Seleccionar</button>
               </div>

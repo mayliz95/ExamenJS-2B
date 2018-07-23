@@ -11,6 +11,8 @@ export class Medicamento {
   public usadoPara: string;
   public fechaCaducidad: string;
   public numeroPastillas: number;
+  public urlImg: string;
+  public estado: string;
   public pacienteIdFK: Paciente;
 
 

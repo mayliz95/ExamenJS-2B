@@ -12,9 +12,9 @@
     <!--mat-icon matBadge='3' matBadgeColor="warn" size="small">shopping_cart</mat-icon-->
   </span>
   <span style=" padding-right: 10px; width: content-box">
-    <img src="{{imgUsuario}}" alt="Usuario">
+    <img src="{{usuario?.urlImg}}" alt="Usuario">
   </span>
-  <span>{{nombreUsuario}}</span>
+  <span>{{usuario?.nombre}} {{usuario?.apellido}}</span>
 </mat-toolbar>
 <br>
 <br>

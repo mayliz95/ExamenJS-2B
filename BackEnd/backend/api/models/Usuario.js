@@ -1,5 +1,5 @@
 /**
- * Paciente.js
+ * Usuario.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,33 +8,29 @@
 module.exports = {
 
   attributes: {
-    nombres: {
+    nombre: {
       type: 'string',
       required: true
     },
-    apellidos: {
+    apellido: {
       type: 'string',
       required: true
     },
-    fechaNacimiento: {
+    direccion: {
       type: 'string',
       required: true
     },
-    hijos: {
-      type: 'number',
+    correo: {
+      type: 'string',
       required: true
     },
-    tieneSeguro: {
-      type: 'boolean',
+    clave: {
+      type: 'string',
       required: true
     },
     urlImg: {
       type: 'string',
       required: true
-    },
-    medicamentos: {
-      collection: 'Medicamento',
-      via: 'pacienteIdFK'
     }
   },
 };

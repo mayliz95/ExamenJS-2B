@@ -3,25 +3,35 @@ import {CarritoService} from "../Servicios/carrito.service";
 import { MatDialog, MatDialogConfig} from "@angular/material";
 import {DialogoComponent} from "../dialogo/dialogo.component";
 import {Medicamento} from "../Clases/Medicamento";
+import {Usuario} from "../Clases/usuario";
+import {UsuarioService} from "../Servicios/usuario.service";
 
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css'],
-  providers: [CarritoService]
+  providers: [CarritoService, UsuarioService]
 })
 export class CarritoComponent implements OnInit {
 
   medicamentoArreglo = [];
   totaGramosAIngerir;
+  usuario: Usuario;
+
   constructor(private serviceCarrito: CarritoService,
-              public dialog: MatDialog
+              public dialog: MatDialog,
+              private _usuarioService: UsuarioService
   ) {
   }
 
   ngOnInit() {
     this.medicamentoArreglo = CarritoService.arreglo_Carrito;
     this.totaGramosAIngerir = this.calcularTotalGramos()
+    this._usuarioService.getUsuarioPorId(1).subscribe(
+      (result: any) => {
+        this.usuario = result;
+      }
+    );
   }
 
   calcularTotalGramos (): Number {
